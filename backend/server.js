@@ -8,6 +8,11 @@ import foodrouter from './routes/foodroute.js';
 const app = express();
 const port = process.env.PORT || 8000;
 
+mongoose.connection.on('connected', () => console.log('Mongoose connected'));
+mongoose.connection.on('error', (err) => console.error('Mongoose connection error:', err));
+
+
+
 //middlewares
 app.use(express.json());
 app.use(cors());
