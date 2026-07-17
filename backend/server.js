@@ -24,6 +24,7 @@ console.log("Mongo State:", mongoose.connection.readyState);
 
 //api endpoints
 app.use('/api/food', foodrouter);
+app.use('/images', express.static('uploads')); // Serve static files from the 'uploads' directory
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
